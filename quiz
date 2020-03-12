@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+
+DEFINITIONS=$HOME/.definitions
+
+find "$DEFINITIONS" -type f -printf "%f\n" | shuf -n 1

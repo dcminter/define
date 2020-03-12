@@ -1,0 +1,34 @@
+#!/bin/bash
+#
+
+DEFINITIONS=$HOME/.definitions
+
+function usage() {
+   echo "Usage: define <term> [definition]"
+   echo ""
+   echo "E.g."
+   echo " $ define LOTR \"Lord of the rings\""
+   echo " Lord of the rings"
+   echo " $ define LOTR"
+   echo " Lord of the rings"
+   echo ""
+   echo " $ define QOTD"
+   echo " No definition of \"QOTD\" recorded."
+   echo ""
+}
+
+if [[ "$#" -lt 1 || "$#" -gt 2 ]]; then
+    usage
+    exit
+fi
+
+if [ "$#" -eq 2 ]; then
+   mkdir -p "$DEFINITIONS"
+   echo "$2" >> "$DEFINITIONS/$1"
+fi
+
+if [ -f "$DEFINITIONS/$1" ]; then
+   cat "$DEFINITIONS/$1"   
+else
+   echo "No definition of \"$1\" recorded."
+fi
