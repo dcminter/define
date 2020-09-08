@@ -1,7 +1,7 @@
 # Trivial bash scripts
 
   * [define](./define) - record or lookup a definition
-  * [quiz](./quiz) - show one of the definitions at random
+  * [quiz](./quiz) - show one of the abbreviations at random
 
 ## Deficiencies
 
